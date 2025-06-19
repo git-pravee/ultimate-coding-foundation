@@ -42,11 +42,11 @@ void p4()
     v = l * w * h;
     printf("Voume of cuboid = %d", v);
 }
-void p4()
+void p5()
 {
-    int l, w, h, v;
-    printf("Enter length, width, breadth: ");
-    scanf("%d%d%d", &l, &w, &h);
-    v = l * w * h;
-    printf("Voume of cuboid = %d", v);
+    float sp, cp, profit;
+    printf("Enter cost price and sell price of 12 dozen of bananas: ");
+    scanf("%d%d", &cp, &sp);
+    profit = (sp - cp) / 12.0 * 25;
+    printf("profit(+ve)/loss(-ve) = %f", profit);
 }
