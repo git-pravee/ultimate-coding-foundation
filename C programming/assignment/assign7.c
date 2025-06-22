@@ -15,7 +15,7 @@ void p1()
     if(n>0)
         printf("Positive number");
     else
-        printf("Non Positive number");
+        printf("Non positive number");
 }
 void p2()
 {
@@ -23,9 +23,9 @@ void p2()
     printf("Enter a number: ");
     scanf("%d", &n);
     if(n%5)
-        printf("Not divisible 5");
+        printf("Not divisible by 5");
     else
-        printf("Divisible 5");
+        printf("Divisible by 5");
 }
 void p3()
 {
