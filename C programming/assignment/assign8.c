@@ -41,8 +41,38 @@ void p3()
     else
         printf("Real and distinct");
 }
-int main()
+void p4()
 {
-    p3();
-    return 0;
+    int year;
+    printf("Enter a year: ");
+    scanf("%d", &year);
+    if(year%100)
+    {
+        if(year%4)
+            printf("Not leap year");
+        else
+            printf("Leap year");
+    }
+    else 
+    {
+        if(year%400)
+            printf("Not leap year");
+        else
+            printf("Leap year");
+    }
+}
+void p5()
+{
+    int a, b, c;
+    printf("Enter three numbers: ");
+    scanf("%d%d%d", &a, &b, &c);
+    if(a<b && a<c)
+    {
+        if(b<c)
+            printf("%d is greater", c);
+        else
+            printf("%d is greater", b);
+    }
+    else
+        printf("%d is greater", a);
 }
