@@ -88,7 +88,7 @@ void p5_a()
 // Euclidean Algorithm
 void p5_b()
 {
-    int a, b, h;
+    int a, b;
     printf("Enter two numbers: ");
     scanf("%d%d", &a, &b);
     while (b != 0)
