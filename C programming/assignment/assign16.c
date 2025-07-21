@@ -64,11 +64,9 @@ void p3()
     }
     printf("Not fibonacci series number");
 }
-void p4()
+int isarmstrong(int n)
 {
-    int n, digits=0, result=0;
-    printf("Enter a non-negative number: ");
-    scanf("%d", &n);
+    int digits = 0, result = 0;
     int temp = n;
     while(temp)
     {
@@ -83,15 +81,29 @@ void p4()
         result = result + power(digit, digits);
         temp = temp / 10;
     }
-
     if(result==n)
+        return 1;
+    return 0;
+}
+void p4()
+{
+    int n;
+    printf("Enter a non-negative number: ");
+    scanf("%d", &n);
+    
+    if(isarmstrong(n))
         printf("Armstrong number");
     else
         printf("Not armstrong number");
 }
-
-int main()
+void p5()
 {
-    p4();
-    return 0;
+    int n=1;
+    printf("Printing all armstrong numbers under 1000: ");
+    while(n<=1000)
+    {
+        if(isarmstrong(n))
+            printf("%d ", n);
+        n++;
+    }
 }
