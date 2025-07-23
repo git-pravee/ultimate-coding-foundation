@@ -115,8 +115,117 @@ void p5()
 3 2 1
 4 3 2 1
 */
-
-int main() {
-  p5();
+void p6()
+{
+  int i, j, k;
+  for(i=1; i<=4; i++)
+  {
+    k=i;
+    for(j=1; j<=4; j++)
+    {
+      if(j<=i)
+        printf("%d ", k--);
+      else
+        printf("  ");
+    }
+    printf("\n");
+  }
+}
+/*
+A B C D E
+  A B C D
+    A B C
+      A B
+        A
+*/
+void p7()
+{
+  int i, j;
+  char ch;
+  for(i=1; i<=5; i++)
+  {
+    ch='A';
+    for(j=1; j<=5; j++)
+    {
+      if(j>=i)
+        printf("%c ", ch++);
+      else
+        printf("  ");
+    }
+    printf("\n");
+  }
+}
+/*
+1
+2 3
+4 5 6
+7 8 9 10
+*/
+void p8()
+{
+  int i, j, k=1;
+  for(i=1; i<=4; i++)
+  {
+    for(j=1; j<=4; j++)
+    {
+      if(j<=i)
+        printf("%d ", k++);
+      else
+        printf("  ");
+    } 
+    printf("\n");
+  }
+}
+/*
+A B C D E
+  B C D E
+    C D E
+      D E
+        E
+*/
+void p9()
+{
+  int i, j;
+  char ch;
+  for(i=1; i<=5; i++)
+  {
+    ch='A';
+    for(j=1; j<=5; j++)
+    {
+      if(j>=i)
+        printf("%c ", ch);
+      else
+        printf("  ");
+      ch++;
+    }
+    printf("\n");
+  }
+}
+/*
+* * * * *
+*       *
+*       *
+*       *
+* * * * *
+*/
+void p10()
+{
+  int i, j;
+  for(i=1; i<=5; i++)
+  {
+    for(j=1; j<=5; j++)
+    {
+      if(i==1 || i==5 || j==1 || j==5)
+        printf("* ");
+      else
+        printf("  ");
+    }
+    printf("\n");
+  }
+}
+int main() 
+{
+  // enter the function you want to run
+  // p10();
   return 0;
 }
