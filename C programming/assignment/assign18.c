@@ -173,16 +173,16 @@ void p7()
       {
         if(k==1)
         {
-          if(j<4)
+          if(j<=4)
             printf("%d ", l++);
           else
             printf("%d ", l--);
           k=0;
-          if(i%2==0 || i%4==0)
-            l++;
         }
         else
         {
+          if(j==5 && i%2==0)
+            l--;
           printf("  ");
           k=1;
         }
@@ -193,9 +193,89 @@ void p7()
     printf("\n");
   }
 }
+/*
+* * * * * * *
+* * *   * * *
+* *       * *
+*           *
+*/
+void p8()
+{
+  int i, j;
+  for(i=1; i<=4; i++)
+  {
+    for(j=1; j<=7; j++)
+    {
+      if(j<=5-i || j>=3+i)
+        printf("* ");
+      else
+        printf("  ");
+    }
+    printf("\n");
+  }
+}
+/*
+1 2 3 4 3 2 1
+1 2 3   3 2 1
+1 2       2 1
+1           1
+*/
+void p9()
+{
+  int i, j, k;
+  for(i=1; i<=4; i++)
+  { 
+    k=1;
+    for(j=1; j<=7; j++)
+    {
+      if(j<=5-i || j>=3+i)
+        if(j<4)
+          printf("%d ", k++);
+        else
+          printf("%d ", k--);
+      else
+      {
+        if(j==4 && i!=1)
+          k--;
+        printf("  ");
+      }
+    }
+    printf("\n");
+  }
+}
+/*
+A B C D C B A
+A B C   C B A
+A B       B A
+A           A
+*/
+void p10()
+{
+  int i, j;
+  char ch;
+  for(i=1; i<=4; i++)
+  { 
+    ch='A';
+    for(j=1; j<=7; j++)
+    {
+      if(j<=5-i || j>=3+i)
+        if(j<4)
+          printf("%c ", ch++);
+        else
+          printf("%c ", ch--);
+      else
+      {
+        if(j==4 && i!=1)
+          ch--;
+        printf("  ");
+      }
+    }
+    printf("\n");
+  }
+}
 int main()
 {
   // enter the function you want to run
-  p7();
+  // p10();
   return 0;
 }
