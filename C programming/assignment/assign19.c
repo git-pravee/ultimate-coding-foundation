@@ -127,13 +127,101 @@ void p3()
       break;
   }
 }
+int validTriangle(int a, int b, int c)
+{
+  if(a+b>c && a+c>b && b+c>a)
+    return 1;
+  return 0;
+}
 void p4()
 {
-  
+  int a, b, c, d=1;
+  while(d!=4)
+  {
+    printf("\nSelect option: \n");
+    printf("1. Check isoceles tringle\n");
+    printf("2. Check right angle triangle\n");
+    printf("3. Check equilateral triangle\n");
+    printf("4. Exit\n");
+    scanf("%d", &d);
+    switch(d)
+    {
+      case 1: 
+        {
+          printf("Enter three lengths of triangle\n");
+          scanf("%d%d%d", &a, &b, &c);
+          if(validTriangle(a, b, c))
+          {
+            if(a==b || a==c || b==c)
+              printf("It is a isoceles triangle\n");
+            else
+              printf("It is not a isoceles triangle\n");
+          }
+          else
+            printf("It is not a valid triangle\n");
+        }
+        break;
+      case 2:
+        {
+          printf("Enter three lengths of triangle\n");
+          scanf("%d%d%d", &a, &b, &c);
+          if(validTriangle(a, b, c))
+          {
+            if((a*a + b*b) == (c*c) || (a*a + c*c) == (b*b) || (b*b + c*c) == (a*a))
+              printf("It is a right angle triangle\n");
+            else
+              printf("It is not a right angle triangle\n");
+          }
+          else
+            printf("It is not a valid triangle\n");
+        }
+        break;
+      case 3:
+        {
+          printf("Enter three lengths of triangle\n");
+          scanf("%d%d%d", &a, &b, &c);
+          if(validTriangle(a, b, c))
+          {
+            if(a==b && a==c)
+              printf("It is a equilateral triangle\n");
+            else
+              printf("It is not a equilateral triangle\n");
+          }
+          else
+            printf("It is not a valid triangle\n");
+        }
+        break;
+      case 4:
+        printf("Exiting program..\n");
+        break;
+      default:
+        printf("Invalid choice! Try again.\n");
+    }
+  }
+}
+void p5()
+{
+  int n;
+  printf("enter a number: \n");
+  scanf("%d", &n);
+  switch(n)
+  {
+    case 1:
+      printf("good\n");
+      break;
+    case 2:
+      printf("better\n");
+      break;
+    case 3:
+      printf("best\n");
+      break;
+    default:
+      printf("invalid\n");
+  }
 }
 int main()
 {
   // enter the function you want to run
-  p2();
+  p5();
   return 0;
 }
