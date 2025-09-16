@@ -23,3 +23,107 @@
    4. Check whether a given number is Prime or not
    5. Exit
 */
+#include<stdio.h>
+void p1()
+{
+    int marks;
+    printf("Enter marks: ");
+    scanf("%d", &marks);
+    switch(marks)
+    {
+        case 91 ... 100:
+            printf("Grade A\n");
+            break;
+        case 81 ... 90:
+            printf("Grade B\n");
+            break;
+        case 71 ... 80:
+            printf("Grade C\n");
+            break;
+        case 61 ...70:
+            printf("Grade D\n");
+            break;
+        case 51 ... 60:
+            printf("Grade E\n");
+            break;
+        case 1 ... 50:
+            printf("Grade F\n");
+            break;
+        default:
+            printf("Invalid marks\n");
+    }
+}
+void p2()
+{
+    int status=1;
+    while(status!=5)
+    {
+        printf("\nEnter a choice: \n");
+        printf("1. Factorial of a number\n");
+        printf("2. Check even or odd\n");
+        printf("3. Area of circle\n");
+        printf("4. Sum of first n natural numbers\n");
+        printf("5. Exit\n");
+        scanf("%d", &status);
+        switch(status)
+        {
+            case 1:
+                {
+                    int fact=1, n;
+                    printf("Enter a number: ");
+                    scanf("%d", &n);
+                    int temp=n;
+                    while(n)
+                    {
+                        fact=fact*n;
+                        n--;
+                    }
+                    printf("Factorial of %d is %d\n", temp, fact);
+                }
+                break;
+            case 2:
+                {
+                    int num;
+                    printf("Enter a number: ");
+                    scanf("%d", &num);
+                    if(num%2)
+                        printf("It is odd number\n");
+                    else
+                        printf("It is even number\n");
+                }
+                break;
+            case 3:
+                {
+                    int r;
+                    printf("Enter a radius: ");
+                    scanf("%d", &r);
+                    printf("Area of circle is %.02f\n", 3.14*r*r);
+                }
+                break;
+            case 4:
+                {
+                    int n, sum=0;
+                    printf("Enter a number: ");
+                    scanf("%d", &n);
+                    int temp=n;
+                    while(temp)
+                    {
+                        sum=sum+temp;
+                        temp--;
+                    }
+                    printf("Sum of first %d natural number is %d\n", n, sum);
+                }
+                break;
+            case 5:
+                printf("Exiting program...\n");
+                break;
+            default:
+                printf("Invalid option! Please try again..\n");
+        }
+    }
+}
+int main()
+{
+    p2();
+    return 0;
+}
