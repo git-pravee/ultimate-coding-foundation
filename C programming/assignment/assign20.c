@@ -161,7 +161,7 @@ void p4()
             printf("Special character\n");
     }
 }
-oid p2()
+void p5()
 {
     int status=1;
     while(status!=5)
@@ -177,22 +177,56 @@ oid p2()
         {
             case 1:
                 {
-                    
+                    int a, b, max;
+                    printf("Enter a two numbers: ");
+                    scanf("%d%d", &a, &b);
+                    max=a>b?a:b;
+                    while(1)
+                    {
+                        if(max%a==0 && max%b==0)
+                        {
+                            printf("%d and %d of lcm is %d\n", a, b, max);
+                            break;
+                        }
+                        max++;
+                    }
                 }
                 break;
             case 2:
                 {
-                    
+                    int n, digit=0, temp;
+                    printf("Enter a number: ");
+                    scanf("%d", &n);
+                    temp=n;
+                    while(temp)
+                    {   
+                        digit=digit+temp%10;
+                        temp=temp/10;
+                    }
+                    printf("Sum of the digits of %d is %d\n", n, digit);
                 }
                 break;
             case 3:
                 {
-                    
+                    int l, b, h, vol;
+                    printf("Enter a length, breadth and height: ");
+                    scanf("%d%d%d", &l, &b, &h);
+                    vol=l*b*h;
+                    printf("Volume of cuboid is %d\n", vol);
                 }
                 break;
             case 4:
                 {
-                    
+                    int n, i;
+                    printf("Enter a number: ");
+                    scanf("%d", &n);
+                    for(i=2;i<n;i++)
+                        if(n%i==0)
+                            break;
+                    if(i==n)
+                        printf("It is a prime number\n");
+                    else
+                        printf("It is not a prime number\n");
                 }
                 break;
             case 5:
@@ -205,6 +239,6 @@ oid p2()
 }
 int main()
 {
-    p4();
+    p5();
     return 0;
 }
