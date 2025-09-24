@@ -5,3 +5,34 @@
 4. Write a function to check whether a given number contains a given digit or not. (TSRS)
 5. Write a function to print all prime factors of a given number. For example, if the number is 36 then your result should be 2, 2, 3, 3. (TSRN)
 */
+#include<stdio.h>
+int fact(int n)
+{
+    int fact=1;
+    for(int i=1; i<=n; i++)
+        fact=fact*i;
+    return fact;
+}
+int combi(int n, int r)
+{
+    return fact(n) / (fact(r) * fact(n-r));
+}
+int arr(int n , int r)
+{
+    return fact(n) / fact(n-r);
+}
+int checkDigit(int n, int digit)
+{
+    int temp=n;
+    while(temp)
+    {
+        if(digit==temp%10)
+            return 1;
+        temp=temp/10;
+    }
+    return 0;
+}
+int main()
+{
+    printf("factorial %d\n", checkDigit(1652,2));
+}
