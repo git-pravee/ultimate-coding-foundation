@@ -32,7 +32,42 @@ int checkDigit(int n, int digit)
     }
     return 0;
 }
+// Trial Division with √n Optimization
+int isPrime(int n)
+{
+    int i;
+    if(n<=1)
+        return 0;
+    if(n==2)
+        return 1;
+    for(i=2;i*i<=n;i++)
+        if(n%i==0)
+            return 0;
+    return 1;
+}
+int nextPrime(int n)
+{
+    while(n)
+        if(isPrime(++n))
+            return n;
+}
+void printPrimeFactor(int n)
+{
+    int i=2;
+    int temp=n;
+    while(temp>1)
+    {
+        if(temp%i==0)
+        {
+            printf("%d ", i);
+            temp=temp/i;
+        }
+        else
+            i=nextPrime(i);
+    }
+}
 int main()
 {
-    printf("factorial %d\n", checkDigit(1652,2));
+    printPrimeFactor(7);
+    printf("\n");
 }
