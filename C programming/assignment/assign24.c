@@ -37,11 +37,59 @@ void primeBetween(int a, int b)
 }
 void printFib(int n)
 {
-    
+    int a=0, b=1, c;
+    printf("Printing %dth terms Fib..\n", n);
+    for(int i=1; i<=n; i++)
+    {
+        printf("%d ", a);
+        c=a+b;
+        b=a;
+        a=c;
+    }
+}
+int fact(int n)
+{
+    int fact=1;
+    for(int i=1; i<=n; i++)
+        fact=fact*i;
+    return fact;
+}
+int combi(int n, int r)
+{
+    return fact(n) / (fact(r) * fact(n-r));
+}
+void pascal(int n)
+{
+    int i, j, k;
+    for(i=1; i<=n; i++)
+    {
+        k=1;
+        int col=0;
+        for(j=1; j<=n*2-1; j++)
+        {
+            if(j>=n-i+1 && j<=n+i-1)
+            {
+                if(k==1)
+                {
+                    printf("%d  ", combi(i-1, col));
+                    k=0;
+                    col++;
+                }
+                else
+                {
+                    printf("   ");
+                    k=1;
+                }
+            }
+            else
+                printf("   ");
+        }
+        printf("\n");
+    }
 }
 int main()
 {
-    primeBetween(0, 10);
+    pascal(9);
     printf("\n");
     return 0;
 }
