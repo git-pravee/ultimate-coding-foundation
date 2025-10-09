@@ -87,9 +87,56 @@ void pascal(int n)
         printf("\n");
     }
 }
+int arm(int n)
+{
+    int temp=n, digits=0, digit, sum=0, pow;
+    {
+        while(temp)
+        {
+            temp=temp/10;
+            digits++;
+        }
+        temp=n;
+        while(temp)
+        {
+            pow=1;
+            digit=temp%10;
+            temp=temp/10;
+            for(int i=1; i<=digits; i++)
+            {
+                pow=pow*digit;
+            }
+            sum=sum+pow;
+        }
+        if(n==sum)
+            return 1;
+        else 
+            return 0;
+    }
+}
+void printArm(int a, int b)
+{
+    printf("Armstrong number: ");
+    while(a!=b+1)
+    {
+        if(arm(a))
+            printf("%d ", a);
+        a++;
+    }
+}
+void f5(int n)
+{
+    int sum=0;
+    while(n)
+    {
+        sum=sum+fact(n)/n;
+        n--;
+    }
+    printf("%d", sum);
+}
 int main()
 {
-    pascal(9);
+    f5(11);
     printf("\n");
     return 0;
 }
