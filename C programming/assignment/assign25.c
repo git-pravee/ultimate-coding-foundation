@@ -15,11 +15,40 @@ void f1(int n)
     }
     f1(n-1);
     printf("%d ", n);
-
+}
+void f2(int n)
+{
+    if(n==1)
+    {
+        printf("%d ", n);
+        return; 
+    }
+    printf("%d ", n);
+    f2(n-1);
+}
+void f3(int n)
+{
+    if(n==1)
+    {
+        printf("%d ", n*2-1);
+        return;
+    }
+    f3(n-1);
+    printf("%d ", n*2-1);
+}
+void f4(int n)
+{
+    if(n==1)
+    {
+        printf("%d ", n*2-1);
+        return;
+    }
+    printf("%d ", n*2-1);
+    f4(n-1);
 }
 int main()
 {
-    f1(5);
+    f4(5);
     printf("\n");
     return 0;
 }
