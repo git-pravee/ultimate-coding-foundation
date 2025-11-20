@@ -36,8 +36,47 @@ float p2()
     avg=sum/10.0;
     return avg;
 }
+void p3()
+{
+    int a[10]={0};
+    input(a, 10);
+    int odd=0, even=0;
+    for(int i=0; i<=9; i++)
+    {
+        if(a[i]%2==0)
+            even=even+a[i];
+        else
+            odd=odd+a[i];
+    }
+    printf("sum of even numbers : %d\n", even);
+    printf("sum of odd numbers : %d\n", odd);
+}
+int p4()
+{
+    int a[10]={0};
+    input(a, 10);
+    int great=a[0];
+    for(int i=0; i<=9; i++)
+    {
+        if(great<a[i])
+            great=a[i];
+    }
+    return great;
+}
+int p5()
+{
+    int a[10]={0};
+    input(a, 10);
+    int small=a[0];
+    for(int i=0; i<=9; i++)
+    {
+        if(small>a[i])
+            small=a[i];
+    }
+    return small;
+}
 int main()
 {
-    printf("%f\n", p2());
+    printf("%d\n", p5());
     return 0;
 }
