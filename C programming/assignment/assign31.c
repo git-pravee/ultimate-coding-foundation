@@ -41,10 +41,52 @@ void f3(int a[], int n)
     for(int i=0; i<n; i++)
         printf("%d ", a[i]);
 }
+void f4(int a[], int size, int pos, int dir)
+{
+    int temp, i;
+    pos = pos % size;  //extra optimization
+    if(dir==1)  //right
+    {
+        while(pos!=0)
+        {
+            for(i=0; i<size-1; i++)
+            {
+                temp=a[i];
+                a[i]=a[i+1];
+                a[i+1]=temp;
+            }
+            pos--;
+        }
+    }
+    if(dir==0)  //left
+    {
+        while(pos!=0)
+        {
+            for(i=size-1; i>0; i--)
+            {
+                temp=a[i];
+                a[i]=a[i-1];
+                a[i-1]=temp;
+            }
+            pos--;
+        }
+    }
+    for(i=0; i<size; i++)
+        printf("%d ", a[i]);
+}
+int f5(int a[], int size)
+{
+    for(int i=0; i<size-1; i++)
+    {
+        if(a[i]==a[i+1])
+            return a[i];
+    }
+    return -1;
+}
 int main()
 {
-    int a[5]={2,3,56,7,1};
-    f3(a, 5);
+    int a[5]={32, 29, 40, 12, 12};
+    printf("%d", f5(a, 5));
     printf("\n");
     return 0;
 }
