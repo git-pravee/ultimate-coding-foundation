@@ -12,3 +12,24 @@
 9. For que-4, define a function to display rank of the players.
 10. For que-4, define a function to run tournament, in which user has to enter result of each game and update score board using score_board function.  
 */
+#include<stdio.h>
+void p1(int a[3][3], int b[3][3])
+{
+    int c[3][3];
+    for(int i=0; i<3; i++)
+        for(int j=0; j<3; j++)
+            c[i][j]=a[i][j]+b[i][j];
+    for(int i=0; i<3; i++)
+    {
+        for(int j=0; j<3; j++)
+            printf("%3d ", c[i][j]);
+        printf("\n");
+    }
+}
+int main()
+{
+    int a[3][3]={1,2,3,4,5,6,7,8,9};
+    int b[3][3]={1,2,3,4,5,6,7,8,9};
+    p1(a,b);
+    return 0;
+}
