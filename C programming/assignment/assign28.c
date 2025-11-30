@@ -31,6 +31,13 @@ void f3(int n)
     for(int i=0; i<n; i++)
         printf("%d ", fib(i));
 }
+void printFibo(int n, int a, int b)
+{
+    if(n>=0){
+        printf("%d ", a+b);
+        printFibo(n-1, b, a+b);
+    }
+}
 int f4(int n)
 {
     if(n%10==0) 
@@ -45,6 +52,7 @@ int f5(int a, int n)
 }
 int main()
 {
-    printf("%d\n", f5(5,5));
+    printFibo(10, -1, 1);
+    printf("\n");
     return 0;
 }
