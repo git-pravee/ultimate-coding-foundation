@@ -46,9 +46,12 @@ int f4(int n)
 }
 int f5(int a, int n)
 {
-    if(n==1)
-        return a;
-    return a * f5(a, n-1);
+    if(n==0)
+        return 0;
+    if(a>0)
+        return a * f5(a, n-1);
+    else
+        return 1 / a * f5(a, n+1);
 }
 int main()
 {
