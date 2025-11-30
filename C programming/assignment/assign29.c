@@ -12,29 +12,25 @@ void input(int a[], int n)
     for(int i=0; i<=9; i++)
         scanf("%d", &a[i]);
 }
-int p1()
+void p1()
 {
     int a[10]={0};
     int sum=0;
     input(a, 10);
     for(int i=0; i<=9; i++)
-    {
         sum = sum + a[i];
-    }
-    return sum;
+    printf("Sum is %d", sum);
 }
-float p2()
+void p2()
 {
     int a[10]={0};
     int sum=0;
     float avg;
     input(a, 10);
     for(int i=0; i<=9; i++)
-    {
         sum = sum + a[i];
-    }
     avg=sum/10.0;
-    return avg;
+    printf("Avg is %d", avg);
 }
 void p3()
 {
@@ -42,12 +38,10 @@ void p3()
     input(a, 10);
     int odd=0, even=0;
     for(int i=0; i<=9; i++)
-    {
         if(a[i]%2==0)
             even=even+a[i];
         else
             odd=odd+a[i];
-    }
     printf("sum of even numbers : %d\n", even);
     printf("sum of odd numbers : %d\n", odd);
 }
@@ -56,24 +50,20 @@ int p4()
     int a[10]={0};
     input(a, 10);
     int great=a[0];
-    for(int i=0; i<=9; i++)
-    {
+    for(int i=1; i<=9; i++)
         if(great<a[i])
             great=a[i];
-    }
-    return great;
+    printf("Greatest number is %d", great);
 }
 int p5()
 {
     int a[10]={0};
     input(a, 10);
     int small=a[0];
-    for(int i=0; i<=9; i++)
-    {
+    for(int i=1; i<=9; i++)
         if(small>a[i])
             small=a[i];
-    }
-    return small;
+    printf("Smallest number is %d", small);
 }
 int main()
 {
