@@ -44,7 +44,7 @@ int f4(int n)
         return 0;
     return 1+f4(n/10); 
 }
-int f5(int a, int n)
+double f5(double a, double n)
 {
     if(n==0)
         return 0;
