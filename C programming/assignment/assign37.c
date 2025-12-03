@@ -59,8 +59,10 @@ void swapChar(char str[], int a, int b){
 }
 int alphanumeric(char str[]){
     int i=0;
-    int alpha, num;
+    int alpha=0, num=0;
     while(str[i]){
+        if(alpha & num)
+            break;
         unsigned char ch = str[i] | 32;
         if(ch>='a' && ch<='z')
             alpha=1;
@@ -71,7 +73,7 @@ int alphanumeric(char str[]){
     return alpha & num;
 }
 int main(){
-    char str[]="*hellopravin";
+    char str[]="A1";
     printf("%d", alphanumeric(str));
     printf("\n");
     return 0;
