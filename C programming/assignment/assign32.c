@@ -67,18 +67,18 @@ void f3(int a[], int size)
 void f4(int a[], int b[], int size)
 {
     int c[size*2];
-    int i=size-1, j=size-1, k=0;
-    while(i>=0 && j>=0)
+    int i=0, j=0, k=0;
+    while(i<size && j<size)
     {
-        if(a[i]>=b[j])
-            c[k++]=a[i--];
+        if(a[i]<b[j])
+            c[k++]=a[i++];
         else
-            c[k++]=b[j--];
+            c[k++]=b[j++];
     }
-    while(i>=0)
-        c[k++]=a[i--];
-    while(j>=0)
-        c[k++]=b[j--];
+    while(i<size)
+        c[k++]=a[i++];
+    while(j<size)
+        c[k++]=b[j++];
 
     for(k=0; k<size*2; k++)
         printf("%d ", c[k]);
