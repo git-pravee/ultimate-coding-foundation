@@ -12,7 +12,7 @@ void input(char str[][15], int size){
     for(int i=0; i<size; i++){
         fgets(str[i], 15, stdin);
         length=strlen(str[i]);
-        if(length!=15)
+        if(length > 0 && str[i][length-1] == '\n')
             str[i][length-1]='\0';
     }
 }
@@ -42,8 +42,8 @@ void sortCity(char str[][15], int size){
     // input(str, size);
     int i, j;
     char temp[15];
-    for(i=1; i<9; i++){
-        for(j=0; j<10-i; j++){
+    for(i=1; i<size-1; i++){
+        for(j=0; j<size-1-i; j++){
             if(strcmp(str[j], str[j+1])>0){
                 strcpy(temp, str[j]);
                 strcpy(str[j], str[j+1]);
@@ -51,7 +51,7 @@ void sortCity(char str[][15], int size){
             }
         }
     }
-    for(int i=0; i<10; i++)
+    for(int i=0; i<size; i++)
         printf("%s\n", str[i]);
 }
 void trim(char str[]){
@@ -65,7 +65,7 @@ void trim(char str[]){
         str[i++]=str[start++];
     str[i]='\0';
 }
-char storeChar(char ch[]){
+void storeChar(char ch[]){
     trim(ch);
     char str[10][15];
     int i=0, k=0, j=0;
@@ -79,40 +79,31 @@ char storeChar(char ch[]){
             i++;
         }
     }
-    str[++k][0]='\0';
+    str[k][j]='\0';
     for(int i=0; str[i][0]; i++)
         printf("%s\n", str[i]);
 }
-void removeDuplicate(char str[][15], int size){
-    int i, j;
-    char temp[15];
-    for(i=1; i<9; i++){
-        for(j=0; j<10-i; j++){
-            if(strcmp(str[j], str[j+1])>0){
-                strcpy(temp, str[j]);
-                strcpy(str[j], str[j+1]);
-                strcpy(str[j+1], temp);
+int removeDuplicate(char str[][15], int size){
+    for(int i = 0; i < size; i++){
+        for(int j = i + 1; j < size; ){
+            if(strcmp(str[i], str[j]) == 0){
+                for(int k = j; k < size - 1; k++)
+                    strcpy(str[k], str[k+1]);
+                size--;
+            } else {
+                j++;
             }
         }
     }
-    int i=0, j=0;
-    while(str[i][0]){
-        if(strcmp(str[i], str[i+1])==0){
-            while(strcmp(str[i], str[j+1]==0)) j++;
-            i++;
-            strcpy(str[i], str[j]);
-        }
-        i=j;
-    }
-    
-    for(int i=0; str[i][0]; i++){
-        printf("%s\n", str[i]);
-    }
+    return size; 
 }
 int main(){
     char str[10][15]={"nanded", "degloor", "jalana", "pune", "pune", "newyork", "delhi", "hyderabad", "delhi", "nashik"};
     char s[50]="  apple  hello     talware   ";
     // printf("hello");
-    removeDuplicate(str);
+    int size=removeDuplicate(str, 10);
+    for(int i=0; i<size; i++){
+        printf("%s\n", str[i]);
+    }
     return 0;
 }
